@@ -159,8 +159,8 @@ def load_jupyter_server_extension(nbapp):
         nbapp.file_to_run = ''
 
     # Print messages.
-    logger.info('JupyterLab extension loaded from %s' % HERE)
-    logger.info('JupyterLab application directory is %s' % app_dir)
+    logger.info('=============》 JupyterLab extension loaded from %s' % HERE)
+    logger.info('=============》 JupyterLab application directory is %s' % app_dir)
 
     build_url = ujoin(base_url, build_path)
     builder = Builder(core_mode, app_options=build_handler_options)
