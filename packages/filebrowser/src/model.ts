@@ -3,7 +3,7 @@
 
 import { showDialog, Dialog } from '@jupyterlab/apputils';
 
-import { IChangedArgs, PathExt, PageConfig } from '@jupyterlab/coreutils';
+import { IChangedArgs, PathExt } from '@jupyterlab/coreutils';
 
 import { IDocumentManager, shouldOverwrite } from '@jupyterlab/docmanager';
 
@@ -390,7 +390,8 @@ export class FileBrowserModel implements IDisposable {
    * ask for confirmation then upload the file in 1 MB chunks.
    */
   async upload(file: File): Promise<Contents.IModel> {
-    const supportsChunked = PageConfig.getNotebookVersion() >= [5, 1, 0];
+    // const supportsChunked = PageConfig.getNotebookVersion() >= [5, 1, 0];
+    const supportsChunked = false;
     const largeFile = file.size > LARGE_FILE_SIZE;
 
     if (largeFile && !supportsChunked) {
