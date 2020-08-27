@@ -20,7 +20,7 @@ describe('CodeMirrorEditorFactory', () => {
   let model: CodeEditor.IModel;
 
   const options: Partial<CodeMirrorEditor.IConfig> = {
-    lineNumbers: false,
+    lineNumbers: true,
     lineWrap: 'on',
     extraKeys: {
       'Ctrl-Tab': 'indentAuto'
