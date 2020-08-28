@@ -48,6 +48,10 @@ export class CodeMirrorEditorFactory implements IEditorFactoryService {
    */
   newInlineEditor = (options: CodeEditor.IOptions) => {
     options.host.dataset.type = 'inline';
+    if (options.config) {
+      // 始终显示行号
+      options.config.lineNumbers = true;
+    }
     return new CodeMirrorEditor({
       ...options,
       config: { ...this.inlineCodeMirrorConfig, ...(options.config || {}) }
@@ -59,6 +63,10 @@ export class CodeMirrorEditorFactory implements IEditorFactoryService {
    */
   newDocumentEditor = (options: CodeEditor.IOptions) => {
     options.host.dataset.type = 'document';
+    if (options.config) {
+      // 始终显示行号
+      options.config.lineNumbers = true;
+    }
     return new CodeMirrorEditor({
       ...options,
       config: { ...this.documentCodeMirrorConfig, ...(options.config || {}) }
